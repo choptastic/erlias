@@ -1,0 +1,16 @@
+{application, erlias,
+ [{description, "Compile an Alias Module for Erlang"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {erlias, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    merl
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
