@@ -8,7 +8,7 @@ About this Library
 ==================
 
 (This was originally a part of [sql_bridge](https://github.com/choptastic/sql_bridge),
-but has been split off into its own library for others to use, if they want.
+but has been split off into its own library for others to use, if they want.)
 
 There are a number of other Erlang module alias libraries out there, but they
 all appear to be parse transforms, where you must compile your modules with
