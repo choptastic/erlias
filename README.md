@@ -44,17 +44,20 @@ This will compile a new module called `short` that takes the exports from
 `my_super_long_module_name` and forwards them to the long module.
 
 
-So for example, if you call:
+Instead of calling:
 
 ```
 my_super_long_module_name:some_function().
 ```
 
-Erlias allows you to call
+You can now call
 
 ```
 short:some_function().
 ```
+
+Because `short` is a new globally accessible module, it can be called from
+any module or from the Erlang shell.
 
 How it works
 ------------
