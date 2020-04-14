@@ -79,6 +79,6 @@ some_function() ->
 Author
 ======
 
-[Jesse Gumm](https://jessegumm.com)
+[Jesse Gumm](http://jessegumm.com)
 
 MIT Licensed
