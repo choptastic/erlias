@@ -3,6 +3,9 @@ erlias
 
 Compile an Alias Module for Erlang
 
+(This was originally a part of [sql_bridge](https://github.com/choptastic/sql_bridge),
+but has been split off into its own library for others to use, if they want.
+
 
 Make and alias to another a module
 ==================================
@@ -11,7 +14,8 @@ Make and alias to another a module
 erlias:build(short, my_super_long_module_name).
 ```
 
-This will compile a new module called `short` that takes the exports from `my_super_long_module_name` and forwards them to the long module.
+This will compile a new module called `short` that takes the exports from
+`my_super_long_module_name` and forwards them to the long module.
 
 
 So for example, if you call:
@@ -26,7 +30,7 @@ Erlias allows you to call
 short:some_function().
 ```
 
-NOTE
+Note
 ====
 
 This is not a parse transform. You do not have to include anything with this, or
