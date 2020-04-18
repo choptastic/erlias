@@ -37,7 +37,7 @@ Usage
 Sometime (probably during application startup), call the following
 
 ```erlang
-erlias:build(short, my_super_long_module_name).
+erlias:build(my_super_long_module_name, short).
 ```
 
 This will compile a new module called `short` that takes the exports from
