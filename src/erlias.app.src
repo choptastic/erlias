@@ -5,8 +5,7 @@
   {mod, {erlias, []}},
   {applications,
    [kernel,
-    stdlib,
-    merl
+    stdlib
    ]},
   {env,[]},
   {modules, []},
