@@ -4,7 +4,7 @@
 
 build(BaseMod, Alias) ->
 	msg(io_lib:format("Building alias ~p ==> ~p.",[Alias, BaseMod])),
-	Exports = sql_bridge:module_info(exports),
+	Exports = BaseMod:module_info(exports),
 	Modtext = build_module(BaseMod, Alias, Exports),
 	Forms = merl:quote(Modtext),
 	Res = merl:compile_and_load(Forms),
