@@ -10,6 +10,7 @@
   {env,[]},
   {modules, []},
 
-  {licenses, ["Apache 2.0"]},
-  {links, []}
+  {maintainers, ["Jesse Gumm"]},
+  {licenses, ["MIT"]},
+  {links, [{"GitHub", "https://github.com/choptastic/erlias"}]}
  ]}.
