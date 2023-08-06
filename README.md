@@ -75,6 +75,12 @@ some_function() ->
 	my_super_long_module_name:some_function().
 ```
 
+Another Function
+----------------
+
+You can also call `erlias:build_text(OriginalMod, NewModule)` and this will
+return the string of the generated module (it won't compile or load the module,
+just give you the text).
 
 Author
 ======
