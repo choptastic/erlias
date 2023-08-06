@@ -1,11 +1,10 @@
 -module(erlias).
--export([build/2]).
+-export([build/2, build_text/2]).
 -include_lib("syntax_tools/include/merl.hrl").
 
 build(BaseMod, Alias) ->
 	msg(io_lib:format("Building alias ~p ==> ~p.",[Alias, BaseMod])),
-	Exports = BaseMod:module_info(exports),
-	Modtext = build_module(BaseMod, Alias, Exports),
+    Modtext = build_text(BaseMod, Alias),
 	Forms = merl:quote(Modtext),
 	Res = merl:compile_and_load(Forms),
 	case Res of 
@@ -14,6 +13,11 @@ build(BaseMod, Alias) ->
 			error_logger:error_msg("Erlias: Unable to compile alias module (~p).~n~s~n", [Modtext]),
 			error
 	end.
+
+build_text(BaseMod, Alias) ->
+	Exports = BaseMod:module_info(exports),
+	Modtext = build_module(BaseMod, Alias, Exports),
+    Modtext.
 
 build_module(BaseMod, Alias, Exports) ->
 	lists:flatten([
@@ -40,8 +44,8 @@ prefixize(BaseMod, FunCall) ->
 	FunCall ++ " -> " ++ atom_to_list(BaseMod) ++ ":" ++ FunCall ++ ".\n".
 	
 arglist( Argc) ->
-	Args = lists:seq($A, $A+Argc-1),
-	StrArgs = [[Arg] || Arg <- Args],
+	Args = lists:seq(1, Argc),
+	StrArgs = [["Arg" ++ integer_to_list(Arg)] || Arg <- Args],
 	string:join(StrArgs, ",").
 
 msg(Msg) ->
